@@ -23,6 +23,12 @@ def create_task_list(title: str, issues: List[github.Issue.Issue]) -> str:
     buffer += "```"
     return buffer
 
+def get_issue(repo: github.Repository.Repository, issue_number: int) -> github.Issue.Issue:
+    """Get the issue object for the given issue number in the given github repository"""
+    print(f"Getting issue number: {issue_number}")
+    print(f"Repo: {repo.full_name}")
+    return repo.get_issue(number=issue_number)
+
 def create_epic_issue(repo: github.Repository.Repository, *, title: str, issues: List[github.Issue.Issue]) -> github.Issue.Issue:
     print(f"Creating epic issue for feature: {title}")
     print(f"Repo: {repo.full_name}")
