@@ -1,0 +1,3 @@
+PyGithub
+gql[requests]
+python-dotenv
